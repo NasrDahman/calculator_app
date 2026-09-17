@@ -19,8 +19,9 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Sync Capacitor & Build Android
+      - name: Add Android Platform & Build
         run: |
+          npx cap add android
           npx cap sync android
           cd android
           ./gradlew assembleDebug
